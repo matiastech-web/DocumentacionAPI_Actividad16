@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>API Docs · CRUD de Productos</title>
+  <link rel="stylesheet" href="docs/css/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+        <defs>
+          <linearGradient id="g" x1="0" x2="24" y1="0" y2="0">
+            <stop stop-color="#22d3ee" />
+            <stop offset="1" stop-color="#60a5fa" />
+          </linearGradient>
+        </defs>
+        <path d="M3 6h18M3 12h18M3 18h18" stroke="url(#g)" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <div class="brand-text">
+        <strong>CRUD de Productos</strong>
+        <span class="tag">API Documentation</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <nav class="nav">
+        <a href="#overview">Visión general</a>
+        <a href="#env">Base URL</a>
+        <a href="#schema">Esquema Producto</a>
+        <a href="#endpoints">Endpoints</a>
+        <a href="#errors">Códigos de error</a>
+        <a href="#figma">Prototipo Figma</a>
+        <a href="#about">Acerca del proyecto</a>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <section id="overview" class="reveal">
+        <h1>API · Productos</h1>
+        <p class="sub">
+          API RESTful desarrollada con <strong>Node.js</strong> y <strong>Express</strong> para administrar productos:
+          crear, listar, consultar, actualizar y eliminar.
+        </p>
+        <div class="card callout">
+          <strong>Nota:</strong> los datos se guardan en memoria (<code>products[]</code>), por lo que se pierden al reiniciar el servidor.
+        </div>
+      </section>
+
+      <section id="env" class="card reveal">
+        <h2>Base URL</h2>
+        <div class="env">
+          <input id="baseUrl" value="http://localhost:3000" />
+        </div>
+      </section>
+
+      <section id="schema" class="card reveal">
+        <h2>Esquema del producto</h2>
+        <table>
+          <thead>
+          <tr><th>Campo</th><th>Tipo</th><th>Requerido</th><th>Descripción</th></tr>
+          </thead>
+          <tbody>
+          <tr><td>id</td><td>number</td><td>✔</td><td>Identificador único</td></tr>
+          <tr><td>name</td><td>string</td><td>✔</td><td>Nombre del producto</td></tr>
+          <tr><td>count</td><td>number</td><td>✔</td><td>Cantidad disponible</td></tr>
+          <tr><td>unitCost</td><td>number</td><td>✔</td><td>Costo unitario</td></tr>
+          <tr><td>currency</td><td>string</td><td>✔</td><td>Moneda (ej. UYU)</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="endpoints" class="card reveal">
+        <h2>Endpoints</h2>
+        <pre class="code">POST /products
+GET /products
+GET /products/:id
+PUT /products/:id
+DELETE /products/:id</pre>
+      </section>
+
+      <section id="errors" class="card reveal">
+        <h2>Códigos de error</h2>
+        <table>
+          <thead><tr><th>Código</th><th>Descripción</th></tr></thead>
+          <tbody>
+          <tr><td>400 Bad Request</td><td>Datos faltantes o id duplicado</td></tr>
+          <tr><td>404 Not Found</td><td>Producto no encontrado</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="figma" class="card reveal">
+        <h2>Prototipo en Figma</h2>
+        <p><a id="figmaLink" href="#" target="_blank">Tengo que agregar aquí el enlace de Figma. No olvidar.</a></p>
+      </section>
+
+      <section id="about" class="card reveal">
+        <h2>Acerca del proyecto</h2>
+        <p>Proyecto educativo para documentar y diseñar un CRUD. Hecho con 🩷 por el Grupo 2 de Jóvenes a Programar.</p>
+      </section>
+
+    </main>
+  </div>
+
+  <button class="backTop" id="backTop">↑ Arriba</button>
+  <script src="docs/js/app.js"></script>
+</body>
+</html>
